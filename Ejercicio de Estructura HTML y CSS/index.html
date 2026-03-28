@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Proyecto 1 | Calculadora</title>
+</head>
+
+<body>
+    <div class="main-container">
+
+        <div class="main-screen" id="screen"></div>
+
+        <div class="btn-container"> <!-- AC DE ? ^ -->
+            <div class="btn1" onclick="deleteAll()"><h2>AC</h2></div>
+            <div class="btn1" onclick="deleteLast()"><h2>DE</h2></div>
+            <div class="btn2"><h2><a href="https://www.youtube.com/watch?v=glaFn_mdqdQ">?</a></h2></div>
+            <div class="btn2" onclick="handleClick('^')"><h2>^</h2></div>
+        </div>
+
+        <div class="btn-container"> <!-- 1 2 3 + -->
+            <div class="btn" onclick="handleClick(1)"><h2>1</h2></div>
+            <div class="btn" onclick="handleClick(2)"><h2>2</h2></div>
+            <div class="btn" onclick="handleClick(3)"><h2>3</h2></div>
+            <div class="btn2" onclick="handleClick('+')"><h2>+</h2></div>
+        </div>
+
+        <div class="btn-container"> <!-- 4 5 6 - -->
+            <div class="btn" onclick="handleClick(4)"><h2>4</h2></div>
+            <div class="btn" onclick="handleClick(5)"><h2>5</h2></div>
+            <div class="btn" onclick="handleClick(6)"><h2>6</h2></div>
+            <div class="btn2" onclick="handleClick('-')"><h2>-</h2></div>
+        </div>
+
+        <div class="btn-container"> <!-- 7 8 9 * -->
+            <div class="btn" onclick="handleClick(7)"><h2>7</h2></div>
+            <div class="btn" onclick="handleClick(8)"><h2>8</h2></div>
+            <div class="btn" onclick="handleClick(9)"><h2>9</h2></div>
+            <div class="btn2" onclick="handleClick('*')"><h2>*</h2></div>
+        </div>
+
+        <div class="btn-container"> <!-- . 0 = / -->
+            <div class="btn1" onclick="handleClick('.')"><h2>.</h2></div>
+            <div class="btn" onclick="handleClick(0)"><h2>0</h2></div>
+            <div class="btn1" onclick="calculate()"><h2>=</h2></div>
+            <div class="btn2" onclick="handleClick('/')"><h2>/</h2></div>
+        </div>
+
+        <div class="history-container" id="history">Last Operation:</div>
+    </div>
+
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>

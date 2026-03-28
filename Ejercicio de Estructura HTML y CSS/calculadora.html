@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Calculadora</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-container": "#ff067f",
+                        "background": "#0e0e0e",
+                        "on-tertiary": "#47001f",
+                        "primary-container": "#cafd00",
+                        "on-primary": "#516700",
+                        "surface-bright": "#2c2c2c",
+                        "surface-container-low": "#131313",
+                        "surface-container-high": "#1f1f1f",
+                        "on-surface": "#ffffff",
+                        "on-surface-variant": "#ababab",
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; display: inline-block; line-height: 1; }
+        .bg-primary-gradient { background: linear-gradient(135deg, #f3ffca 0%, #beee00 100%); }
+        body { min-height: 100dvh; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container flex flex-col">
+
+<header class="bg-[#0e0e0e] w-full px-4 pt-6 z-50">
+    <div class="flex items-center justify-center relative w-full h-16">
+        <h1 class="text-xl font-bold text-[#ffffff] tracking-[0.2em] font-['Space_Grotesk'] uppercase tracking-widest">MONOLITH</h1>
+        <button class="absolute right-0 text-[#e2e2e2] hover:opacity-80 transition-opacity active:scale-95">
+            <span class="material-symbols-outlined">history</span>
+        </button>
+    </div>
+</header>
+
+<main class="flex-grow flex flex-col max-w-md mx-auto w-full px-6 pb-12">
+    <section class="flex-grow flex flex-col justify-end pt-12 pb-10">
+        <div class="w-full text-right overflow-hidden">
+            <p id="history" class="text-on-surface-variant font-headline text-lg tracking-wider mb-2 opacity-60 min-h-[1.5rem]"></p>
+            <h2 id="screen" class="text-[4rem] md:text-[5rem] font-headline font-bold leading-none tracking-[-0.02em] text-primary-container break-all">0</h2>
+        </div>
+    </section>
+
+    <section class="bg-surface-container-low rounded-xl p-4 shadow-[0_24px_48px_rgba(0,0,0,0.5)]">
+        <div class="grid grid-cols-4 gap-3">
+            <button onclick="deleteAll()" class="h-16 flex items-center justify-center bg-tertiary-container text-on-tertiary rounded-md font-headline font-bold text-xl hover:brightness-110 active:scale-95 transition-all">AC</button>
+            <button onclick="deleteLast()" class="h-16 flex items-center justify-center bg-surface-container-high text-white rounded-md font-headline font-semibold text-xl hover:bg-surface-bright active:scale-95 transition-all">
+                <span class="material-symbols-outlined">backspace</span>
+            </button>
+            <button onclick="handleClick('^')" class="h-16 flex items-center justify-center bg-surface-container-high text-white rounded-md font-headline font-semibold text-xl hover:bg-surface-bright active:scale-95 transition-all">^</button>
+            <button onclick="handleClick('/')" class="h-16 flex items-center justify-center bg-primary-gradient text-on-primary rounded-md font-headline font-bold text-2xl hover:brightness-110 active:scale-95">÷</button>
+            
+            <button onclick="handleClick('7')" class="h-16 bg-surface-container-high text-white rounded-md font-headline font-semibold text-2xl active:scale-95">7</button>
+            <button onclick="handleClick('8')" class="h-16 bg-surface-container-high text-white rounded-md font-headline font-semibold text-2xl active:scale-95">8</button>
+            <button onclick="handleClick('9')" class="h-16 bg-surface-container-high text-white rounded-md font-headline font-semibold text-2xl active:scale-95">9</button>
+            <button onclick="handleClick('*')" class="h-16 bg-primary-gradient text-on-primary rounded-md font-headline font-bold text-2xl active:scale-95">×</button>
+            
+            <button onclick="handleClick('4')" class="h-16 bg-surface-container-high text-white rounded-md font-headline font-semibold text-2xl active:scale-95">4</button>
+            <button onclick="handleClick('5')" class="h-16 bg-surface-container-high text-white rounded-md font-headline font-semibold text-2xl active:scale-95">5</button>
+            <button onclick="handleClick('6')" class="h-16 bg-surface-container-high text-white rounded-md font-headline font-semibold text-2xl active:scale-95">6</button>
+            <button onclick="handleClick('-')" class="h-16 bg-primary-gradient text-on-primary rounded-md font-headline font-bold text-2xl active:scale-95">−</button>
+            
+            <button onclick="handleClick('1')" class="h-16 bg-surface-container-high text-white rounded-md font-headline font-semibold text-2xl active:scale-95">1</button>
+            <button onclick="handleClick('2')" class="h-16 bg-surface-container-high text-white rounded-md font-headline font-semibold text-2xl active:scale-95">2</button>
+            <button onclick="handleClick('3')" class="h-16 bg-surface-container-high text-white rounded-md font-headline font-semibold text-2xl active:scale-95">3</button>
+            <button onclick="handleClick('+')" class="h-16 bg-primary-gradient text-on-primary rounded-md font-headline font-bold text-2xl active:scale-95">+</button>
+            
+            <button onclick="handleClick('0')" class="h-16 col-span-2 px-8 bg-surface-container-high text-white rounded-md font-headline font-semibold text-2xl text-left active:scale-95">0</button>
+            <button onclick="handleClick('.')" class="h-16 bg-surface-container-high text-white rounded-md font-headline font-semibold text-2xl active:scale-95">.</button>
+            <button onclick="calculate()" class="h-16 bg-primary-gradient text-on-primary rounded-md font-headline font-bold text-2xl active:scale-95">=</button>
+        </div>
+    </section>
+
+    <section class="mt-8">
+        <div class="bg-surface-container-low p-4 rounded-xl flex flex-col justify-between h-24 border border-white/5">
+            <span class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Result Cache</span>
+            <p id="latest-entry" class="text-on-surface font-headline text-2xl">0.00</p>
+        </div>
+    </section>
+</main>
+
+<script>
+    let fullOp = '';
+    let result = 0;
+    let history = '';
+    const ops = ['+','*','/','^'];
+    const allOps = ['+','-','*','/','^'];
+
+    function handleClick(number) {
+        let last = fullOp.at(-1);
+        let last2 = fullOp.at(-2);
+        if (fullOp.length >= 24) return; 
+        if (fullOp === '' && ops.includes(number)) return; 
+        if (fullOp.length === 1 && last === '-' && allOps.includes(number)) return;
+        if (last === '.' && number === '.') return; 
+        if (allOps.includes(last) && ops.includes(number)) return; 
+        if (allOps.includes (last2) && last === '-' && allOps.includes(number)) return; 
+        fullOp += number;
+        showNumber(fullOp);
+    };
+
+    function calculate() {
+        history = fullOp;
+        const [a,op,b] = fullOp.split(/(?<=\d)(\+|\-|\*|\/|\^)/gm); 
+        switch (op) {
+            case '*': result = Number(a) * Number(b); break;
+            case '/': result = Number(a) / Number(b); break;
+            case '+': result = Number(a) + Number(b); break;
+            case '-': result = Number(a) - Number(b); break;
+            case '^': result = Number(a) ** Number(b); break;
+            default: result = Number(a) || 0; break;
+        };
+        fullOp = result.toString();
+        showNumber(fullOp);       
+    };
+
+    function deleteAll(){
+        fullOp = ''; result = 0; history = '';
+        showNumber('0');
+    };
+
+    function deleteLast(){
+        fullOp = fullOp.slice(0, -1); 
+        showNumber(fullOp === '' ? '0' : fullOp);
+    };
+
+    function showNumber(n) {
+        document.getElementById("screen").innerText = n;
+        if(history) {
+            document.getElementById("history").innerText = history + " = " + result;
+            document.getElementById("latest-entry").innerText = result;
+        } else {
+            document.getElementById("history").innerText = "";
+        }
+    };
+</script>
+</body>
+</html>
