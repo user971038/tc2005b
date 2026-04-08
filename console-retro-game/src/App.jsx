@@ -24,12 +24,16 @@ function App() {
   }, [data]);
 
   // Manejar dirección
-  const [position, setPosition] = useState({1});
+  const [position, setPosition] = useState(1);
+  
+  const [myPokeSelection, setMyPokeSelection] = useState([]);
+  const [pcPokeSelection, setPcPokeSelection] = useState([]);
+
   const handleDirection = (direction) => {
-    if(direction === "right"){
-      //setPosition(prev) => prev + 1);
+    if(direction === 'right'){
+      setPosition((prev) => prev + 1);
     } else {
-      //setPosition(prev) => prev - 1);
+      setPosition((prev) => prev - 1);
     }
     console.log({direction});
   };

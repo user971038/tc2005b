@@ -1,18 +1,19 @@
-const Screen = ({ pokemones }) => {
+const Screen = ({ pokemones, position }) => {
+  
   return (
     <>
-      <div className="w-[650px] h-[500px] overflow-y-auto border-15 border-solid rounded-lg">
-        <div className="flex flex-wrap justify-center">
+      <div className="w-[450px] h-[200px] overflow-y-auto border-4 border-solid">
+        <div className="flex flex-wrap items-center justify-center">
           {pokemones?.map((pokemon, index) => (
-            <div key={index} 
+            <div key={index}
               style={{color: position === pokemon.id ? "red" : "white"}}
-              className="flex flex-col border-2">
-              <p>{pokemon.name}</p>
+              className="flex flex-col border-2" >
               <img
                 src={pokemon?.sprites?.front_default}
                 alt={pokemon.name}
                 className="w-25 h-25"
               />
+              <p>{pokemon.name}</p>
             </div>
           ))}
         </div>
