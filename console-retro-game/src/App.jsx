@@ -24,8 +24,32 @@ function App() {
   }, [data]);
 
   // Manejar dirección
+  const [position, setPosition] = useState({1});
   const handleDirection = (direction) => {
+    if(direction === "right"){
+      //setPosition(prev) => prev + 1);
+    } else {
+      //setPosition(prev) => prev - 1);
+    }
     console.log({direction});
+  };
+
+  const computerSelection = () => {
+    const rnd = getRandomInt(1, 100)
+    const pc = pokemones.filter((p) => p.id === rnd);
+    console.log(pc);
+  };
+
+  function getRandomInt(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
+  }
+
+  const handleSelection = () => {
+    const selectPokemon = pokemones.filter((p) => p.id === position);
+    console.log({selectPokemon});
+    computerSelection();
   };
 
   return (

@@ -4,7 +4,9 @@ const Screen = ({ pokemones }) => {
       <div className="w-[650px] h-[500px] overflow-y-auto border-15 border-solid rounded-lg">
         <div className="flex flex-wrap justify-center">
           {pokemones?.map((pokemon, index) => (
-            <div key={index} className="flex flex-col border-2" >
+            <div key={index} 
+              style={{color: position === pokemon.id ? "red" : "white"}}
+              className="flex flex-col border-2">
               <p>{pokemon.name}</p>
               <img
                 src={pokemon?.sprites?.front_default}
