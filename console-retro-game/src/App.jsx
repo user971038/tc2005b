@@ -25,7 +25,7 @@ function App() {
 
   // Manejar dirección
   const [position, setPosition] = useState(1);
-  
+
   const [myPokeSelection, setMyPokeSelection] = useState([]);
   const [pcPokeSelection, setPcPokeSelection] = useState([]);
 
@@ -60,9 +60,9 @@ function App() {
     <div className="text-center mt-10">
       <h1 className="text-3xl font-bold underline">Hello World</h1>
       <div className="flex mt-10">
-        <LeftControl />
+        <LeftControl handleDirection={handleDirection} />
         <Screen pokemones={pokemones} />
-        <RightControl />
+        <RightControl handleSelection={handleSelection} />
       </div>
     </div>
   );
