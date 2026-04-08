@@ -3,6 +3,7 @@ import './App.css';
 import LeftControl from './components/LeftControl';
 import RightControl from './components/RightControl';
 import Screen from './components/Screen';
+import GameScreen from './components/GameScreen';
 import useFetch from './hooks/useFetch';
 
 function App() {
@@ -10,11 +11,25 @@ function App() {
   const { data, loading, error } = useFetch(url);
 
   const [pokemones, setPokemones] = useState([]);
+
   const getListPokemones = () => {
     const list = data?.results?.filter((p) => p.url);
     const plist = list?.map((l) => fetch(l.url).then((res) => res.json()));
     Promise.all(plist).then((values) => {
-      console.log('promesa values', values);
+      const saniData = values?.map((e) => {
+        return {
+          name: e.name,
+          moves: e.moves.map((e) => {
+            return {
+              ...e,
+              attack: getRandomInt(1, 400),
+            };
+          }),
+          sprites: e.sprites,
+        };
+      });
+
+      console.log({ saniData });
       setPokemones(values);
     });
   };
@@ -62,7 +77,11 @@ function App() {
       <p className="text-xl">Current Position: {position}</p>
       <div className="flex mt-10">
         <LeftControl handleDirection={handleDirection} />
-        <Screen pokemones={pokemones} position={position} />
+        { myPokeSelection && pcPokeSelection ? (
+          <GameScreen player={myPokeSelection} cpu={pcPokeSelection} />
+        ):(
+          <Screen pokemones={pokemones} position={position} />
+        )}
         <RightControl handleSelection={handleSelection} />
       </div>
     </div>

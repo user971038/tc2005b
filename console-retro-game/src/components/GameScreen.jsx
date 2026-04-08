@@ -1,12 +1,12 @@
-const Screen = ({ pokemones, position }) => {
+const GameScreen = ({ player, cpu }) => {
   
   return (
     <>
-      <div className="w-[600px] h-[500px] overflow-y-auto border-15 rounded-xl border-solid pt-5 pb-5">
+      <div className="w-[600px] h-[500px] overflow-y-auto border-15 rounded-xl border-solid">
         <div className="flex flex-wrap items-center justify-center">
           {pokemones?.map((pokemon, index) => (
             <div key={index}
-              style={{color: position === pokemon.id ? "purple" : "white"}}
+              style={{color: position === pokemon.id ? "red" : "white"}}
               className="flex flex-col border-2" >
               <img
                 src={pokemon?.sprites?.front_default}
@@ -22,4 +22,4 @@ const Screen = ({ pokemones, position }) => {
   );
 };
 
-export default Screen;
+export default GameScreen;
