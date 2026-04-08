@@ -6,7 +6,7 @@ import Screen from './components/Screen';
 import useFetch from './hooks/useFetch';
 
 function App() {
-  const url = 'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0';
+  const url = 'https://pokeapi.co/api/v2/pokemon?limit=1025&offset=0';
   const { data, loading, error } = useFetch(url);
 
   const [pokemones, setPokemones] = useState([]);
@@ -31,15 +31,15 @@ function App() {
 
   const handleDirection = (direction) => {
     if(direction === 'right'){
-      setPosition((prev) => prev + 1);
+      setPosition((prev) => (prev < 1025 ? prev + 1 : prev));
     } else {
-      setPosition((prev) => prev - 1);
+      setPosition((prev) => (prev > 1 ? prev - 1 : prev));
     }
     console.log({direction});
   };
 
   const computerSelection = () => {
-    const rnd = getRandomInt(1, 100)
+    const rnd = getRandomInt(1, 1025);
     const pc = pokemones.filter((p) => p.id === rnd);
     console.log(pc);
   };
@@ -59,9 +59,10 @@ function App() {
   return (
     <div className="text-center mt-10">
       <h1 className="text-3xl font-bold underline">Hello World</h1>
+      <p className="text-xl">Current Position: {position}</p>
       <div className="flex mt-10">
         <LeftControl handleDirection={handleDirection} />
-        <Screen pokemones={pokemones} />
+        <Screen pokemones={pokemones} position={position} />
         <RightControl handleSelection={handleSelection} />
       </div>
     </div>
