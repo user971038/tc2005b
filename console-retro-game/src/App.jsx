@@ -47,9 +47,14 @@ function App() {
   const handleDirection = (direction) => {
     if(direction === 'right'){
       setPosition((prev) => (prev < 1025 ? prev + 1 : prev));
-    } else {
+    } else if(direction === 'left'){
       setPosition((prev) => (prev > 1 ? prev - 1 : prev));
-    }
+    } else if(direction === 'up'){
+      setPosition((prev) => (prev > 5 ? prev - 5 : prev));
+    } else if(direction === 'down'){
+      setPosition((prev) => (prev < 1020 ? prev + 5 : prev));
+    };
+
     console.log({direction});
   };
 
@@ -57,6 +62,7 @@ function App() {
     const rnd = getRandomInt(1, 1025);
     const pc = pokemones.filter((p) => p.id === rnd);
     console.log(pc);
+    setPcPokeSelection(pc);
   };
 
   function getRandomInt(min, max) {
@@ -68,21 +74,29 @@ function App() {
   const handleSelection = () => {
     const selectPokemon = pokemones.filter((p) => p.id === position);
     console.log({selectPokemon});
+    setMyPokeSelection(selectPokemon);
     computerSelection();
   };
 
+  const goBack = () => {
+    setMyPokeSelection([]);
+    setPcPokeSelection([]);
+  };
+
   return (
-    <div className="text-center mt-10">
+    <div className="text-center mt-10 items-center">
       <h1 className="text-3xl font-bold underline">Hello World</h1>
       <p className="text-xl">Current Position: {position}</p>
+      <p className="text-xl">My Pokémon: {myPokeSelection[0]?.name}</p>
+      <p className="text-xl">PC Pokémon: {pcPokeSelection[0]?.name}</p>
       <div className="flex mt-10">
         <LeftControl handleDirection={handleDirection} />
-        { myPokeSelection && pcPokeSelection ? (
-          <GameScreen player={myPokeSelection} cpu={pcPokeSelection} />
+        { myPokeSelection.length > 0 && pcPokeSelection.length > 0 ? (
+          <GameScreen myPoke={myPokeSelection[0]} pcPoke={pcPokeSelection[0]} />
         ):(
           <Screen pokemones={pokemones} position={position} />
         )}
-        <RightControl handleSelection={handleSelection} />
+        <RightControl handleSelection={handleSelection} goBack={goBack} />
       </div>
     </div>
   );
