@@ -23,6 +23,11 @@ function App() {
     getListPokemones();
   }, [data]);
 
+  // Manejar dirección
+  const handleDirection = (direction) => {
+    console.log({direction});
+  };
+
   return (
     <div className="text-center mt-10">
       <h1 className="text-3xl font-bold underline">Hello World</h1>
