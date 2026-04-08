@@ -1,16 +1,22 @@
-const Screen = ({pokemones}) => {
+const Screen = ({ pokemones }) => {
   return (
     <>
-      <div className="w-[650px] h-[500px] border-20 border-solid rounded-xl">
-        {pokemones?.map((pokemon) => (
-          <>
-            <p>{pokemon.name}</p>
-            <img src={pokemon.sprites?.front_default} className="w-40 h-40"/>
-          </>
-        ))}
+      <div className="w-[450px] h-[200px] border-4 border-solid">
+        <div>
+          {pokemones?.map((pokemon, index) => (
+            <div key={index} className="flex flex-col border-2" >
+              <p>{pokemon.name}</p>
+              <img
+                src={pokemon?.sprites?.front_default}
+                alt={pokemon.name}
+                className="w-25 h-25"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </>
-  )
+  );
 };
 
-export default Screen
+export default Screen;
