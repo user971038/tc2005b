@@ -1,15 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap');
 
+/* #ccff00, #00f0ff, #ff00e5 */
+
+.main-text-container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .main-text{
     font-size: 96px;
     font-weight: bold;
     color: white;
     text-align: center;
     font-family: "Space Grotesk", sans-serif;
-    text-shadow: -3px -3px 0px white;
-    background: linear-gradient(0.25turn, #ccff00, #00f0ff, #ff00e5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    text-shadow: 3px 3px 0px #ff00e5;
+    /*background: linear-gradient(0.25turn, #ccff00, #00f0ff, #ff00e5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);*/
+
 }
 
 .secondary-text {
