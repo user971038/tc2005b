@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div>
         <p className="main-text">
-            Architecting <span className="secondary-text">Digital Artifacts</span>
+            Welcome. {/*<span className="secondary-text">Digital Artifacts</span>*/}
         </p>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

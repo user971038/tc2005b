@@ -1,7 +1,21 @@
-.containe-navbar {
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.container-navbar {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+a {
+  color: white;
+  font-weight: 300;
+  transition: color 0.3s ease;
+  font-size: 14px;
+  font-family: "Manrope", sans-serif;
+}
+
+a:hover {
+  color: #00F0FF;
 }
 
 .links {

@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 const Navbar = ({children}) => {
     return(
         <>
-            <div className="containe-navbar">
+            <div className="container-navbar">
                 <div className="links">
                     <p><Link to="/Home">Home</Link></p>
                     <p><Link to="/About">About Me</Link></p>
