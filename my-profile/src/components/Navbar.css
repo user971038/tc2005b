@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-a {
+.nav-link {
   color: rgb(255, 255, 255, 0.7);
   font-weight: 300;
   transition: color 0.3s ease;
@@ -14,14 +14,14 @@ a {
   font-family: "Manrope", sans-serif;
 }
 
-a:hover {
+.nav-link:hover {
   color: #00F0FF;
 }
 
 .links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 20px;
 }

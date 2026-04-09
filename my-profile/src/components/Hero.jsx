@@ -8,8 +8,9 @@ const Hero = () => {
             <p className="main-text">
                 Welcome. {/*<span className="secondary-text">Digital Artifacts</span>*/}
             </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <p className="description-text">Welcome to my personal website!</p>
+            <p className="description-text">
+                Computer Science Student || Software Developer || Tech Enthusiast
             </p>
         </div>
         <div className="btn-container">

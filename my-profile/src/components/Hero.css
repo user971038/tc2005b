@@ -27,11 +27,18 @@
     -webkit-text-fill-color: transparent;
 }
 
+.description-text {
+    font-size: 16px;
+    color: rgb(255, 255, 255, 0.7);
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+}
+
 .btn {
-    width: 191px;
-    height: 56px;
+    width: 150px;
+    height: 60px;
     border: none;
-    background-color: #00ff9d;
+    background-color: #00f0ff;
     text-transform: uppercase;
     color: white;
     font-weight: bold;
@@ -39,12 +46,13 @@
 }
 
 .btn:hover {
-    background-color: #cf5cff;
+    background-color: #ccff00;
 }
 
 .btn-container {
+    margin-top: 81px;
     display: flex;
-    gap: 10px;
+    gap: 30px;
     justify-content: center;
     align-items: center;
 }

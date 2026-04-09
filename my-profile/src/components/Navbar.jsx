@@ -6,10 +6,10 @@ const Navbar = ({children}) => {
         <>
             <div className="container-navbar">
                 <div className="links">
-                    <p><Link to="/Home">Home</Link></p>
-                    <p><Link to="/About">About Me</Link></p>
-                    <p><Link to="/Projects">Projects</Link></p>
-                    <p><Link to="/Contact">Contact Me</Link></p>
+                    <p><Link className="nav-link" to="/Home">Home</Link></p>
+                    <p><Link className="nav-link" to="/About">About Me</Link></p>
+                    <p><Link className="nav-link" to="/Projects">Projects</Link></p>
+                    <p><Link className="nav-link" to="/Contact">Contact Me</Link></p>
                 </div>
             </div>
             {children}
