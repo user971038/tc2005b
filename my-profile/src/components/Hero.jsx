@@ -9,7 +9,7 @@ const Hero = () => {
             <p className="main-text">Welcome. {/*<span className="secondary-text">Digital Artifacts</span>*/}</p>
         </div>
         <div className="description-container">
-            <p className="description-text">Computer Science Student –– Videogame Enthusiast –– Aspiring Web Developer</p>
+            <p className="description-text" id="description">Computer Science Student –– Videogame Enthusiast –– Aspiring Web Developer</p>
             <p className="description-text" id="welcome">Welcome to my portfolio.</p>
             <div className="btn-container">
                 <Link className="btn" to="https://github.com/user971038">GitHub</Link>

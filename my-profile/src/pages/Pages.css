@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap');
+
+/* #ccff00 - yellow, #00f0ff - cyan, #ff00e5 - magenta */
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.description-text {
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
+    color: white;
+    margin: 30px 2%;
+}
+
+.email-container {
+    background: radial-gradient( #00f0ff, black, black);
+    padding: 21px 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 21px;
+    gap: 21px;
+}
+
+.input-container {
+    display: flex;
+    gap: 21px;
+}
+
+input {
+    width: 186px;
+    background: black;
+    border: solid white 1px;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    padding: 12px;
+}
+
+textarea {
+    background: black;
+    border: solid white 1px;
+
+    color: white;
+    font-size: 16px;
+    width: 420px;
+    height: 210px;
+    resize: none;
+    padding: 12px;
+    font-family: 'Manrope', sans-serif;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 120px;
+    height: 54px;
+    border: none;
+    background-color: white;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Manrope", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #ff00e5;
+    color: white;
+}

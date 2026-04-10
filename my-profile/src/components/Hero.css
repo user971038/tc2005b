@@ -38,21 +38,21 @@
 /* Description */
 
 /* unused */
-.secondary-text {
+/*.secondary-text {
     background: linear-gradient(0.25turn, #00ff9d, #ebf8e1, #cf5cff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
+}*/
 
 .description-container {
     margin-top: 30px;
-}
-
-.description-text {
-    font-size: 14px;
-    color: white;
     text-align: center;
     font-family: "Manrope", sans-serif;
+}
+
+#description {
+    font-size: 16px;
+    color: white;
 }
 
 #welcome {
@@ -69,7 +69,7 @@
     text-align: center;
 
     width: 120px;
-    height: 60px;
+    height: 54px;
     border: none;
     background-color: #00f0ff;
     text-transform: uppercase;
