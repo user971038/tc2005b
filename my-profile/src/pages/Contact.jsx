@@ -41,7 +41,7 @@ const Contact = () => {
   /* --- Return --- */
 
   return (
-    <div>
+    <div className="body">
       <Navbar />
       <h1 style={{ color: '#ccff00' }}>Contact <span style={{ color: 'white' }}>Me</span></h1>
       <p className="description-text">Questions? Send me a message!</p>

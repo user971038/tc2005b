@@ -2,6 +2,10 @@
 
 /* #ccff00 - yellow, #00f0ff - cyan, #ff00e5 - magenta */
 
+.body {
+    background-color: #0D0D0F;
+}
+
 h1 {
     text-align: center;
     font-size: 60px;
@@ -17,7 +21,7 @@ h1 {
 }
 
 .email-container {
-    background: radial-gradient( #00f0ff, black, black);
+    background: radial-gradient( #00f0ff, #0D0D0F, #0D0D0F);
     padding: 21px 2%;
     display: flex;
     justify-content: center;
@@ -43,7 +47,7 @@ input {
 }
 
 textarea {
-    background: black;
+    background: #0D0D0F;
     border: solid white 1px;
 
     color: white;
@@ -68,7 +72,7 @@ button {
     text-transform: uppercase;
     transition: background-color 0.3s ease;
 
-    color: black;
+    color: #0D0D0F;
     text-decoration: none;
     text-transform: uppercase;
     font-family: "Manrope", sans-serif;

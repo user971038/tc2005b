@@ -17,7 +17,7 @@
 .blur-background {
     position: absolute;
     inset: 0; /* Shorthand for top/bottom/left/right: 0 */
-    background: linear-gradient(to right, black, black, black, black, black, #00f0ff, #ccff00, #ff00e5);
+    background: linear-gradient(to right, #0D0D0F, #0D0D0F, #0D0D0F, #0D0D0F, #0D0D0F, #00f0ff, #ccff00, #ff00e5);
     filter: blur(50px);
 }
 
@@ -75,7 +75,7 @@
     text-transform: uppercase;
     transition: background-color 0.3s ease;
 
-    color: black;
+    color: #0D0D0F;
     text-decoration: none;
     text-transform: uppercase;
     font-family: "Manrope", sans-serif;
