@@ -1,11 +1,13 @@
 import { Link } from 'react-router'
+import Navbar from '../components/Navbar.jsx'
 
 const Projects = () => {
   return (
-    <>
-        <h1>Projects</h1>  
-        <p><Link to="/">Go Back</Link></p>
-    </>
+    <div>
+      <Navbar />
+      <h1>Projects</h1>  
+      <p><Link to="/">Go Back</Link></p>
+    </div>
   )
 }
 

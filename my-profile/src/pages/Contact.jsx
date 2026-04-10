@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from '../components/Navbar.jsx'
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -35,6 +36,7 @@ const Contact = () => {
 
   return (
     <div>
+      <Navbar />
       Contact Me
       <div>
         <div style={{ display: 'flex', gap: '20px' }}>

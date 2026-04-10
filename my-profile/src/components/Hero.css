@@ -1,14 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap');
 
-/* #ccff00, #00f0ff, #ff00e5 */
+/* #ccff00 - yellow, #00f0ff - cyan, #ff00e5 - magenta */
+
+/* Main */
 
 .main-text-container {
     justify-content: center;
     align-items: center;
     text-align: center;
+    height: 350px;
+    margin: 25px 2%;
+    position: relative;
+    overflow: hidden;
+}
+
+.blur-background {
+    position: absolute;
+    inset: 0; /* Shorthand for top/bottom/left/right: 0 */
+    background: linear-gradient(to right, black, black, black, black, black, #00f0ff, #ccff00, #ff00e5);
+    filter: blur(50px);
 }
 
 .main-text{
+    position: relative;
     font-size: 96px;
     font-weight: bold;
     color: white;
@@ -21,36 +35,61 @@
 
 }
 
+/* Description */
+
+/* unused */
 .secondary-text {
     background: linear-gradient(0.25turn, #00ff9d, #ebf8e1, #cf5cff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+.description-container {
+    margin-top: 30px;
+}
+
 .description-text {
-    font-size: 16px;
-    color: rgb(255, 255, 255, 0.7);
+    font-size: 14px;
+    color: white;
     text-align: center;
     font-family: "Manrope", sans-serif;
 }
 
+#welcome {
+    color: #ccff00;
+    font-weight: bold;
+}
+
+/* Buttons */
+
 .btn {
-    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 120px;
     height: 60px;
     border: none;
     background-color: #00f0ff;
     text-transform: uppercase;
-    color: white;
-    font-weight: bold;
     transition: background-color 0.3s ease;
+
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Manrope", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .btn:hover {
-    background-color: #ccff00;
+    background-color: #ff00e5;
+    color: white;
 }
 
 .btn-container {
-    margin-top: 81px;
+    margin-top: 30px;
     display: flex;
     gap: 30px;
     justify-content: center;

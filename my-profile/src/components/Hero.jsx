@@ -5,21 +5,16 @@ const Hero = () => {
   return (
     <div>
         <div className="main-text-container">
-            <p className="main-text">
-                Welcome. {/*<span className="secondary-text">Digital Artifacts</span>*/}
-            </p>
-            <p className="description-text">Welcome to my personal website!</p>
-            <p className="description-text">
-                Computer Science Student || Software Developer || Tech Enthusiast
-            </p>
+            <div className="blur-background"></div>
+            <p className="main-text">Welcome. {/*<span className="secondary-text">Digital Artifacts</span>*/}</p>
         </div>
-        <div className="btn-container">
-            <button className="btn">
-                <Link to="/Projects">View Projects</Link>
-            </button>
-            <button className="btn">
-                <Link to="/About">About Me</Link>
-            </button>
+        <div className="description-container">
+            <p className="description-text">Computer Science Student –– Videogame Enthusiast –– Aspiring Web Developer</p>
+            <p className="description-text" id="welcome">Welcome to my portfolio.</p>
+            <div className="btn-container">
+                <Link className="btn" to="https://github.com/user971038">GitHub</Link>
+                <Link className="btn" to="/About">About Me</Link>
+            </div>
         </div>
     </div>
   );

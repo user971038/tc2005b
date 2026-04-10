@@ -6,7 +6,7 @@ const Navbar = ({children}) => {
         <>
             <div className="container-navbar">
                 <div className="links">
-                    <p><Link className="nav-link" to="/Home">Home</Link></p>
+                    <p><Link className="nav-link" to="/">Home</Link></p>
                     <p><Link className="nav-link" to="/About">About Me</Link></p>
                     <p><Link className="nav-link" to="/Projects">Projects</Link></p>
                     <p><Link className="nav-link" to="/Contact">Contact Me</Link></p>
