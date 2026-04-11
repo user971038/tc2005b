@@ -24,6 +24,7 @@ const Contact = () => {
 
   const handleSendEmail = async (e) => {
     e.preventDefault();
+    alert('Button works!');
     const data = await fetch('/api/server', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -73,9 +74,7 @@ const Contact = () => {
             placeholder="Write your message here..."
           />
         </div>
-        <button 
-          onClick={handleSendEmail}
-        >
+        <button onClick={handleSendEmail}>
           Contact Me
         </button>
       </div>
