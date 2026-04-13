@@ -1,12 +1,12 @@
 import React from 'react';
 
-const RightControl = ({ handleSelection, goBack }) => {
+const RightControl = ({ handleSelection, goBack, handleHP }) => {
   return (
     <>
-      <div className="w-[200px] h-[500px] rounded-l-xl rounded-r-4xl bg-orange-500 pt-10 pb-10">
+      <div className="w-[183px] h-[420px] rounded-l-xl rounded-r-4xl bg-orange-500 pt-10 pb-10">
         <button className="rounded-full bg-black w-[60px] h-[60px] text-blue-500">X</button>
         <div>
-          <button className="rounded-full bg-black w-[60px] h-[60px] text-green-500 mr-4">Y</button>
+          <button onClick={handleHP} className="rounded-full bg-black w-[60px] h-[60px] text-green-500 mr-4">Y</button>
           <button onClick={handleSelection} className="rounded-full bg-black w-[60px] h-[60px] text-red-500 ml-4">A</button>
         </div>
         <button onClick={goBack} className="rounded-full bg-black w-[60px] h-[60px] text-yellow-500">B</button>
