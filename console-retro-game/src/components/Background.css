@@ -1,0 +1,11 @@
+#Screen {
+    background-image: url('../assets/pkmn_grass.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#GameScreen {
+    background-image: url('../assets/field_day.png');
+    background-size: cover;
+    background-position: center;
+}

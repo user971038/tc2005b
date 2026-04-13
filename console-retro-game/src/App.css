@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&&display=swap');
+
+body {
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;

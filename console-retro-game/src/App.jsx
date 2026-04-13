@@ -8,7 +8,7 @@ import Details from './components/Details';
 import useFetch from './hooks/useFetch';
 
 function App() {
-  const url = 'https://pokeapi.co/api/v2/pokemon?limit=1025&offset=0';
+  const url = 'https://pokeapi.co/api/v2/pokemon?limit=251&offset=0';
   const { data, loading, error } = useFetch(url);
 
   const [pokemones, setPokemones] = useState([]);
@@ -50,20 +50,20 @@ function App() {
 
   const handleDirection = (direction) => {
     if(direction === 'right'){
-      setPosition((prev) => (prev < 1025 ? prev + 1 : prev));
+      setPosition((prev) => (prev < 251 ? prev + 1 : prev));
     } else if(direction === 'left'){
       setPosition((prev) => (prev > 1 ? prev - 1 : prev));
     } else if(direction === 'up'){
       setPosition((prev) => (prev > 5 ? prev - 5 : prev));
     } else if(direction === 'down'){
-      setPosition((prev) => (prev < 1020 ? prev + 5 : prev));
+      setPosition((prev) => (prev < 251 ? prev + 5 : prev));
     };
 
     console.log({direction});
   };
 
   const computerSelection = () => {
-    const rnd = getRandomInt(1, 1025);
+    const rnd = getRandomInt(1, 251);
     const pc = pokemones.filter((p) => p.id === rnd);
     console.log(pc);
     setPcPokeSelection(pc);
@@ -116,12 +116,14 @@ function App() {
 
   return (
     <div className="text-center mt-10 items-center">
-      <h1 className="text-3xl font-bold underline">Pokémon Battle!</h1>
-      {/*<p className="text-xl">Current Position: {position}</p>
-      <p className="text-xl">My Pokémon: {myPokeSelection[0]?.name}</p>
+      <h1 className="text-3xl font-bold underline uppercase">Pokémon Battle!</h1>
+      <p className="text-xl">My Pokémon: No. {position} <span class="uppercase">{pokemones?.find((p) => p.id === position)?.name}</span></p>
+      {/*<p className="text-xl">My Pokémon: {myPokeSelection[0]?.name}</p>
       <p className="text-xl">PC Pokémon: {pcPokeSelection[0]?.name}</p>*/}
 
-      <p className="text-xl">Winner: {winner}</p>
+      {winner && (
+        <p className="text-xl">Winner: {winner}</p>
+      )}
 
       <div className="flex mt-10 items-center justify-center">
         <LeftControl handleDirection={handleDirection} />
