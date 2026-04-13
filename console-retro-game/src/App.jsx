@@ -21,10 +21,11 @@ function App() {
     Promise.all(plist).then((values) => {
       const saniData = values?.map((e) => {
         return {
+          id: e.id,
           name: e.name,
-          moves: e.moves.map((e) => {
+          moves: e.moves.map((m) => {
             return {
-              ...e,
+              ...m,
               attack: getRandomInt(1, 30),
             };
           }),
@@ -99,13 +100,33 @@ function App() {
   };
 
   const [lastDamage, setLastDamage] = useState({ player: 0, pc: 0 });
+  const [myMove, setMyMove] = useState('');
+  const [pcMove, setPcMove] = useState('');
+
+  let x = 0;
+  let y = 0;
 
   const handleHP = () => {
 
     if(myHP === 0 || pcHP === 0) return;
 
-    const newMyDamage = getRandomInt(1, 30);
-    const newPcDamage = getRandomInt(1, 30);
+    if(myPokeSelection[0].id === 132){
+      x = 0;
+    } else {
+      x = getRandomInt(0,3);
+    }
+
+    if(pcPokeSelection[0].id === 132){
+      y = 0;
+    } else {
+      y = getRandomInt(0,3);
+    }
+
+    setMyMove(myPokeSelection[0].moves[x]?.move.name);
+    setPcMove(pcPokeSelection[0].moves[y]?.move.name);
+
+    const newMyDamage = myPokeSelection[0].moves[x]?.attack;
+    const newPcDamage = pcPokeSelection[0].moves[y]?.attack;
 
     setLastDamage({ player: newMyDamage, pc: newPcDamage });
 
@@ -140,7 +161,7 @@ function App() {
       <div className="flex mt-10 items-center justify-center">
         <LeftControl handleDirection={handleDirection} />
         { myPokeSelection.length > 0 && pcPokeSelection.length > 0 ? (
-          <GameScreen myPoke={myPokeSelection[0]} pcPoke={pcPokeSelection[0]} myHP={myHP} pcHP={pcHP} myDamage={lastDamage.player} pcDamage={lastDamage.pc} />
+          <GameScreen myPoke={myPokeSelection[0]} pcPoke={pcPokeSelection[0]} myHP={myHP} pcHP={pcHP} myDamage={lastDamage.player} pcDamage={lastDamage.pc} myMove={myMove} pcMove={pcMove} />
         ):(
           <Screen pokemones={pokemones} position={position} />
         )}

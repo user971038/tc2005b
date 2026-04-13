@@ -1,6 +1,7 @@
 import './Background.css';
 
-const GameScreen = ({ myPoke, pcPoke, myHP, pcHP, myDamage, pcDamage }) => {
+const GameScreen = ({ myPoke, pcPoke, myHP, pcHP, myDamage, pcDamage, myMove, pcMove }) => {
+
   return (
     <>
       <div id="GameScreen" className="w-[600px] h-[420px] overflow-x-auto border-15 rounded-xl border-solid p-5">
@@ -29,8 +30,8 @@ const GameScreen = ({ myPoke, pcPoke, myHP, pcHP, myDamage, pcDamage }) => {
                 <p>Battle's Over!</p>
               ) : (
                 <>
-                <p><span className="uppercase">{myPoke.name} did {myDamage} damage!</span></p>
-                <p><span className="uppercase">{pcPoke.name} did {pcDamage} damage!</span></p>
+                <p><span className="uppercase">{myPoke.name} used {myMove} and did {myDamage} damage!</span></p>
+                <p><span className="uppercase">{pcPoke.name} used {pcMove} and did {pcDamage} damage!</span></p>
                 </>
               )}
           </div>
