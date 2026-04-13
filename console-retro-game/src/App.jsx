@@ -12,7 +12,8 @@ function App() {
   const { data, loading, error } = useFetch(url);
 
   const [pokemones, setPokemones] = useState([]);
-  const [moves, setMoves] = useState([]);
+
+  const [inBattle, setInBattle] = useState(false);
 
   const getListPokemones = () => {
     const list = data?.results?.filter((p) => p.url);
@@ -24,7 +25,7 @@ function App() {
           moves: e.moves.map((e) => {
             return {
               ...e,
-              attack: getRandomInt(1, 400),
+              attack: getRandomInt(1, 30),
             };
           }),
           sprites: e.sprites,
@@ -32,7 +33,7 @@ function App() {
       });
 
       console.log({ saniData });
-      setPokemones(values);
+      setPokemones(saniData);
     });
   };
 
@@ -49,6 +50,7 @@ function App() {
   const [winner, setWinner] = useState('');
 
   const handleDirection = (direction) => {
+    if(inBattle) return;
     if(direction === 'right'){
       setPosition((prev) => (prev < 251 ? prev + 1 : prev));
     } else if(direction === 'left'){
@@ -79,6 +81,7 @@ function App() {
   const [pcHP, setPcHP] = useState(100);
 
   const handleSelection = () => {
+    if(inBattle) return;
     const selectPokemon = pokemones.filter((p) => p.id === position);
     console.log({selectPokemon});
     setMyPokeSelection(selectPokemon);
@@ -86,19 +89,28 @@ function App() {
     setMyHP(100);
     setPcHP(100);
     setWinner('');
+    setInBattle(true);
   };
 
   const goBack = () => {
     setMyPokeSelection([]);
     setPcPokeSelection([]);
+    setInBattle(false);
   };
 
-  const handleHP = () => {
-    const myDamage = getRandomInt(1, 30);
-    const pcDamage = getRandomInt(1, 30);
+  const [lastDamage, setLastDamage] = useState({ player: 0, pc: 0 });
 
-    const nextMyHP = Math.max(0, myHP - pcDamage);
-    const nextPcHP = Math.max(0, pcHP - myDamage);
+  const handleHP = () => {
+
+    if(myHP === 0 || pcHP === 0) return;
+
+    const newMyDamage = getRandomInt(1, 30);
+    const newPcDamage = getRandomInt(1, 30);
+
+    setLastDamage({ player: newMyDamage, pc: newPcDamage });
+
+    const nextMyHP = Math.max(0, myHP - newPcDamage);
+    const nextPcHP = Math.max(0, pcHP - newMyDamage);
 
     setMyHP(nextMyHP);
     setPcHP(nextPcHP);
@@ -128,7 +140,7 @@ function App() {
       <div className="flex mt-10 items-center justify-center">
         <LeftControl handleDirection={handleDirection} />
         { myPokeSelection.length > 0 && pcPokeSelection.length > 0 ? (
-          <GameScreen myPoke={myPokeSelection[0]} pcPoke={pcPokeSelection[0]} myHP={myHP} pcHP={pcHP}/>
+          <GameScreen myPoke={myPokeSelection[0]} pcPoke={pcPokeSelection[0]} myHP={myHP} pcHP={pcHP} myDamage={lastDamage.player} pcDamage={lastDamage.pc} />
         ):(
           <Screen pokemones={pokemones} position={position} />
         )}
