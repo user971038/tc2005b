@@ -20,6 +20,7 @@ const handler = async (req, res) => {
 
     return res.status(200).json({ data });
   } catch (error) {
+    console.error("Resend Error:", error);
     return res.status(502).json({ error });
   }
 };
