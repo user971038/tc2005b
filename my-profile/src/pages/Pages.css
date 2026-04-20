@@ -12,6 +12,10 @@ h1 {
     font-family: 'Space Grotesk', sans-serif;
 }
 
+p {
+    font-size: 16px;
+}
+
 .description-text {
     text-align: center;
     font-size: 16px;
@@ -19,6 +23,36 @@ h1 {
     color: white;
     margin: 30px 2%;
 }
+
+/* about me n projects */
+
+.content-container {
+    font-family: 'Manrope', sans-serif;
+    padding: 21px 2%;
+    margin: 21px;
+    /*background-image: linear-gradient(to top, #ccff00, #0D0D0F, #0D0D0F, #00f0ff);*/
+    display: flex;
+    flex-direction: row;
+    gap: 21px;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-row {
+    background-color: #0D0D0F;
+    padding: 21px;
+}
+
+#about-left {
+    text-align: center;
+    height: 480px;
+}
+
+#about-right {
+    text-align: justify;
+}
+
+/* contact me */
 
 .email-container {
     background: radial-gradient( #00f0ff, #0D0D0F, #0D0D0F);
