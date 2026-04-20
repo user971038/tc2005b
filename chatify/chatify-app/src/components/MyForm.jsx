@@ -14,7 +14,7 @@ const MyForm = () => {
     };
 
     return (
-        <div>
+        <>
             <input
                 type="text"
                 name="message"
@@ -22,7 +22,7 @@ const MyForm = () => {
                 onChange={handleOnChange}
             />
             <button onClick={handleClick}>Send</button>
-        </div>
+        </>
     );
 };
 
