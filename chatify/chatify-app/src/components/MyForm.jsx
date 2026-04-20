@@ -8,10 +8,10 @@ const MyForm = () => {
         setMessage(e.target.value);
     };
     
-        const handleClick = (e) => {
-            e.preventDefault()
-            socket.emit('chat message', message)
-        }
+    const handleClick = (e) => {
+        e.preventDefault()
+        socket.emit('chat message', message)
+    };
 
     return (
         <div>
@@ -23,7 +23,7 @@ const MyForm = () => {
             />
             <button onClick={handleClick}>Send</button>
         </div>
-    )
-}
+    );
+};
 
 export default MyForm;

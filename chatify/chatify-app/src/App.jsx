@@ -15,7 +15,8 @@ function App() {
     };
     socket.on('connect', onConnect);
     return () => {
-      socket.on('disconnect');
+      socket.off('disconnect');
+      socket.off('connect', onConnect);
     };
   }, []);
 
