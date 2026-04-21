@@ -28,6 +28,15 @@ const Projects = () => {
         </div>
 
         <div className="content-projects">
+          <h3>Sushi Cat Game</h3>
+          <p className="date">April 2026</p>
+          <p><span style={{  fontWeight: 'bold' }}>Description: </span>
+          Web-based cooking game. Currently still in development.</p>
+          <p><span style={{  fontWeight: 'bold' }}>Abilities & Tools: </span>
+          Unity, itch.io, C#.</p>
+        </div>
+
+        <div className="content-projects">
           <h3>Chatify</h3>
           <p className="date">April 2026</p>
           <p><span style={{  fontWeight: 'bold' }}>Description: </span>

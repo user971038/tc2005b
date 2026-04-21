@@ -9,7 +9,7 @@ const About = () => {
       <h1 style={{ color: '#ff00e5' }}>About <span style={{ color: 'white' }}>Me</span></h1>
       <div className="content-container" id="container-about">
         <div className="content-about" id="about-left">
-          <img style={{ width: '79%' }} src="/../public/myself_bw.png" alt="lit me" />
+          <img style={{ height: '500px' }} src="https://plus.unsplash.com/premium_photo-1667030474693-6d0632f97029?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="lit me" />
           <h3>A picture of a cat (2022).</h3>
         </div>
         <div className="content-about" id="about-right">
