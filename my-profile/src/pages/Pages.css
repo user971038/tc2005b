@@ -26,26 +26,47 @@ p {
 
 /* about me n projects */
 
+#container-about {
+    background-image: linear-gradient(to top, #0D0D0F, #ccff00, #0D0D0F, #0D0D0F);
+    flex-wrap: row;
+}
+
+#container-projects {
+    background-image: linear-gradient(to right, #ff00e5, #0D0D0F, #0D0D0F);
+    flex-wrap: wrap;
+}
+
 .content-container {
     font-family: 'Manrope', sans-serif;
     padding: 21px 2%;
     margin: 21px;
     /*background-image: linear-gradient(to top, #ccff00, #0D0D0F, #0D0D0F, #00f0ff);*/
     display: flex;
-    flex-direction: row;
     gap: 21px;
     justify-content: center;
     align-items: center;
 }
 
-.content-row {
+.content-about {
     background-color: #0D0D0F;
     padding: 21px;
+    width: 50%;
+}
+
+.content-projects {
+    background-color: #0D0D0F;
+    font-family: 'Manrope', sans-serif;
+    border: solid white 1px;
+    padding: 15px;
+    width: 250px;
+}
+
+.date {
+    color: #ccff00;
 }
 
 #about-left {
     text-align: center;
-    height: 480px;
 }
 
 #about-right {
