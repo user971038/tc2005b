@@ -25,21 +25,6 @@ const Contact = () => {
   const handleSendEmail = async (e) => {
     e.preventDefault();
 
-    if (!form.name.trim() || !form.message.trim() || !form.email.trim()) {
-      console.log("ERROR: One or more parameters are empty.");
-      alert("Please fill all the parameters.");
-      return; 
-    }
-
-    //const formElement = e.currentTarget;
-    //const emailInput = formElement.elements.email;
-
-    //if (!emailInput.checkValidity()) {
-      //console.log("ERROR: Invalid email.");
-      //alert("Please enter a valid email.");
-      //return;
-    //}
-
     const data = await fetch('/api/server', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -52,7 +37,6 @@ const Contact = () => {
 
     const res = await data.json();
     console.log(res);
-    alert("Email sent!");
   };
 
   /* --- Return --- */
@@ -64,14 +48,14 @@ const Contact = () => {
       <p className="description-text">Questions? Send me a message!</p>
       <div className="email-container">
         <div className="input-container"> {/* Inputs */ }
-          <input style={{ color: 'white' }} required
+          <input style={{ color: 'white' }}
             name="name"
             type="text"
             value={form.name}
             onChange={handleOnchange}
             placeholder="Your Name"
           />
-          <input style={{ color: '#ff00e5' }} required
+          <input style={{ color: '#ff00e5' }}
             name="email"
             type="email"
             value={form.email}
