@@ -18,32 +18,32 @@ const Projects = () => {
           HTML5, CSS, WordPress, Hostinger.</p>
         </div>
 
-        <div className="content-projects">
+        {/*</div></div><div className="content-projects">
           <h3>Snakes & Ladders Game</h3>
           <p className="date">April 2025</p>
           <p><span style={{  fontWeight: 'bold' }}>Description: </span>
           Creation, testing and publishing of a text-based game of Snakes & Ladders.</p>
           <p><span style={{  fontWeight: 'bold' }}>Abilities & Tools: </span>
           C++, VSCode, GitHub.</p>
-        </div>
+        </div>*/}
 
-        <div className="content-projects">
+        <a href="https://first97.itch.io/sushicatgameprototype"><div className="content-projects">
           <h3>Sushi Cat Game</h3>
           <p className="date">April 2026</p>
           <p><span style={{  fontWeight: 'bold' }}>Description: </span>
           Web-based cooking game. Currently still in development.</p>
           <p><span style={{  fontWeight: 'bold' }}>Abilities & Tools: </span>
           Unity, itch.io, C#.</p>
-        </div>
+        </div></a>
 
-        <div className="content-projects">
+        <a href="https://chatify-my.vercel.app/"><div className="content-projects">
           <h3>Chatify</h3>
           <p className="date">April 2026</p>
           <p><span style={{  fontWeight: 'bold' }}>Description: </span>
           Design and testing of a web-based texting app. Currently still in development.</p>
           <p><span style={{  fontWeight: 'bold' }}>Abilities & Tools: </span>
           HTML, CSS, React, Railway, Postgress.</p>
-        </div>
+        </div></a>
       </div>
     </div>
   )
