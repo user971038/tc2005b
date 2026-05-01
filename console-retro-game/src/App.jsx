@@ -150,12 +150,13 @@ function App() {
   return (
     <div className="text-center mt-10 items-center">
       <h1 className="text-3xl font-bold underline uppercase">Pokémon Battle!</h1>
-      <p className="text-xl">My Pokémon: No. {position} <span class="uppercase">{pokemones?.find((p) => p.id === position)?.name}</span></p>
+      <p className="text-xl">My Pokémon: No. {position} <span class="uppercase text-purple-500">{pokemones?.find((p) => p.id === position)?.name}</span></p>
+      <p className="text-xl">A -> Select | B -> Back | Y -> Fight</p>
       {/*<p className="text-xl">My Pokémon: {myPokeSelection[0]?.name}</p>
       <p className="text-xl">PC Pokémon: {pcPokeSelection[0]?.name}</p>*/}
 
       {winner && (
-        <p className="text-xl">Winner: {winner}</p>
+        <p className="text-xl text-orange-500">Winner: {winner}</p>
       )}
 
       <div className="flex mt-10 items-center justify-center">
